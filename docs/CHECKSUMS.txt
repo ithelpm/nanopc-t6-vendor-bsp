@@ -1,0 +1,45 @@
+# NanoPC-T6 Vendor BSP — Download Integrity Checksums
+# 下載完整性驗證紀錄
+#
+# Format is standard `sha256sum` output (hash, two spaces, filename).
+# All files below were downloaded from FriendlyElec's NanoPC-T6 wiki ->
+# netdisk (Google Drive folder navigation); no direct public download URL
+# exists. See each component's own repo README for full provenance.
+
+## Kernel — archived at https://github.com/ithelpm/nanopc-t6-vendor-kernel
+# Download date: 2026-08-06
+8e8bbdeca018085b1860d5746da88134bda91005b054cad18dc799463ae26dd4  linux-kernel-rk3588-6.1.55-11e6fba-20231019.tgz
+
+## U-Boot — archived at https://github.com/ithelpm/nanopc-t6-vendor-uboot
+# Download date: 2026-08-06
+d551cd3219a5e982b661f431335d8f4c96b8ea32a06748bf6f41d1ea60044cb1  uboot-v2017.09-rk3588-22147f3-20230808.tgz
+
+## rtl8821CU — standalone download, resolved to drivers-extra/rtl8821CU submodule
+# Download date: 2026-08-06
+# Upstream: https://github.com/friendlyarm/rtl8821CU @ cd34be6c4c7e2c8b437cab6eea0af3f3b6a37ab4
+ba67d6be74aec3f632c0070164f59172f745c02f4be764b0e306590a567c111b  rtl8821CU-cd34be6.tgz
+
+## Note on the other 6 driver folders / 其餘 6 個 driver 資料夾的說明
+#
+# r8125, rtl8812au, rtl8822bu, rtw88, cryptodev-linux, and nft-fullcone were
+# all extracted from FriendlyElec's combined "additional_drivers" package.
+# That combined archive is no longer present on disk (it was already
+# extracted and removed before this checksum record was created), so no
+# file-level SHA256 can be recorded for it here.
+#
+# Instead, each of those 6 folders' integrity is anchored by the exact
+# upstream git commit hash it was independently verified against (via the
+# GitHub API, not guessed) — see the component table in
+# ../README.md. A git commit hash is itself a cryptographic hash covering
+# the full tree and history of that commit, which is at least as strong an
+# integrity guarantee as a file-level SHA256 of the original tarball would
+# have been, and it is independently re-verifiable against the live
+# upstream repos at any time.
+#
+# r8125、rtl8812au、rtl8822bu、rtw88、cryptodev-linux、nft-fullcone 這 6 個
+# 都是從友善電子打包的「additional_drivers」合併壓縮檔解出來的。那個原始壓縮
+# 檔在建立這份紀錄前就已經解壓縮並刪除，所以這裡沒有辦法補上它的 SHA256。
+# 改用每個資料夾各自驗證過的 upstream git commit hash 作為完整性依據（見
+# ../README.md 的元件對照表）——commit hash 本身就是涵蓋整個 tree 與歷史的
+# 加密雜湊，保證強度不輸給原始壓縮檔的 SHA256，而且隨時可以拿去對照上游 repo
+# 重新驗證。
