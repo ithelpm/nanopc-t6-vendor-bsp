@@ -24,9 +24,10 @@ This project exists to:
    [`uboot/`](./uboot).
 2. Identify the **real upstream** of the "additional drivers" FriendlyElec
    bundled alongside the kernel — several of these turned out not to be
-   FriendlyElec's own work at all (see the component table below), and one
-   (`rtl8822bu`) turned out to actually be FriendlyElec's own public GitHub
-   repo, just never linked from the wiki/netdisk package.
+   FriendlyElec's own work at all (see the component table below), while
+   three others (`r8125`, `rtl8821CU`, `rtl8822bu`) turned out to actually be
+   FriendlyElec's own public GitHub repos (commits authored by their own
+   engineer), just never linked from the wiki/netdisk package.
 3. Serve as a stable, versioned reference for driver/firmware/bootloader
    study on this hardware.
 
@@ -41,7 +42,8 @@ This project exists to:
 | rtw88 | `drivers-extra/rtw88` | [lwfinger/rtw88](https://github.com/lwfinger/rtw88) (standalone backport package, not mainline Linux) | `0208fe971e92322ac13db18a2395847c5ee896f4` | 2023-10-18 | GPL / dual BSD-GPL | Confirmed not present in `torvalds/linux` |
 | cryptodev-linux | `drivers-extra/cryptodev-linux` | [cryptodev-linux/cryptodev-linux](https://github.com/cryptodev-linux/cryptodev-linux) | `bb8bc7cf60d2c0b097c8b3b0e807f805b577a53f` | 2023-07-03 | GPLv2 (per local `COPYING`) | |
 | nft-fullcone | `drivers-extra/nft-fullcone` | [fullcone-nat-nftables/nft-fullcone](https://github.com/fullcone-nat-nftables/nft-fullcone) (repo archived, still fetchable) | `07d93b626ce5ea885cd16f9ab07fac3213c355d9` | 2023-05-17 | GPL | |
-| r8125 | *not yet included* | **unresolved** — checked 20+ community mirrors/DKMS packages, none contain the vendor snapshot's commit (`0551562`) | — | — | `MODULE_LICENSE("GPL")` (source-declared; no LICENSE/COPYING file in the vendor snapshot) | Pending a decision on standalone archival; not wired in as a submodule yet |
+| r8125 | `drivers-extra/r8125` | [friendlyarm/r8125](https://github.com/friendlyarm/r8125) | `0551562647d4ec4fe903bda566c1a625a4cdfb54` | 2023-05-23 | GPL | **This is FriendlyElec's own public repo** (commit authored by their engineer Jensen Huang), not a third party. First-pass search of community r8125 mirrors missed this — the real upstream is FriendlyElec's own GitHub. |
+| rtl8821CU | `drivers-extra/rtl8821CU` | [friendlyarm/rtl8821CU](https://github.com/friendlyarm/rtl8821CU) | `cd34be6c4c7e2c8b437cab6eea0af3f3b6a37ab4` | 2023-06-27 | GPL | **This is FriendlyElec's own public repo** (same author, Jensen Huang), not a third party |
 
 ## Download / acquisition channel
 
@@ -87,18 +89,19 @@ submodule——這裡沒有任何一份是重新上傳的原始碼副本。
 1. 讓原始碼可以透過一般、可被搜尋索引的管道（公開的 git repo）取得——見
    [`kernel/`](./kernel) 與 [`uboot/`](./uboot)。
 2. 找出友善電子打包進 kernel 旁邊那批「額外驅動」的真實 upstream——其中好幾個
-   根本不是友善電子自己的東西（見下方元件對照表），而其中一個（`rtl8822bu`）
-   反而查出來就是友善電子自己在 GitHub 上公開的 repo，只是 wiki/netdisk 打包
-   時完全沒有附上連結。
+   根本不是友善電子自己的東西（見下方元件對照表），而其中三個（`r8125`、
+   `rtl8821CU`、`rtl8822bu`）反而查出來就是友善電子自己在 GitHub 上公開的
+   repo（commit 作者就是他們的工程師本人），只是 wiki/netdisk 打包時完全沒有
+   附上連結。
 3. 作為研讀這款硬體 driver/firmware/bootloader 的穩定、有版本紀錄的參考素材。
 
 ## 元件對照表
 
 （內容同上方英文表格：kernel/uboot 對應各自的封存 repo 與打包日期；
 `rtl8812au`、`rtw88`、`cryptodev-linux`、`nft-fullcone` 皆為已確認的第三方
-upstream 並 pin 特定 commit；`rtl8822bu` 特別註明其 upstream 其實是友善電子
-自己的公開 repo；`r8125` 目前尚未找到對應 upstream，暫不收錄進本 repo，留待
-後續決定是否獨立封存。）
+upstream 並 pin 特定 commit；`r8125`、`rtl8821CU`、`rtl8822bu` 三個則特別
+註明其 upstream 其實都是友善電子自己的公開 repo，commit 作者是同一位工程師
+Jensen Huang。）
 
 ## 下載／取得管道
 

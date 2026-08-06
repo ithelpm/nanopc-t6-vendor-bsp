@@ -19,3 +19,9 @@
 [submodule "drivers-extra/nft-fullcone"]
 	path = drivers-extra/nft-fullcone
 	url = https://github.com/fullcone-nat-nftables/nft-fullcone.git
+[submodule "drivers-extra/r8125"]
+	path = drivers-extra/r8125
+	url = https://github.com/friendlyarm/r8125.git
+[submodule "drivers-extra/rtl8821CU"]
+	path = drivers-extra/rtl8821CU
+	url = https://github.com/friendlyarm/rtl8821CU.git
