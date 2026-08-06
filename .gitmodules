@@ -1,0 +1,21 @@
+[submodule "kernel"]
+	path = kernel
+	url = https://github.com/ithelpm/nanopc-t6-vendor-kernel.git
+[submodule "uboot"]
+	path = uboot
+	url = https://github.com/ithelpm/nanopc-t6-vendor-uboot.git
+[submodule "drivers-extra/rtl8812au"]
+	path = drivers-extra/rtl8812au
+	url = https://github.com/aircrack-ng/rtl8812au.git
+[submodule "drivers-extra/rtl8822bu"]
+	path = drivers-extra/rtl8822bu
+	url = https://github.com/friendlyarm/rtl8822bu.git
+[submodule "drivers-extra/rtw88"]
+	path = drivers-extra/rtw88
+	url = https://github.com/lwfinger/rtw88.git
+[submodule "drivers-extra/cryptodev-linux"]
+	path = drivers-extra/cryptodev-linux
+	url = https://github.com/cryptodev-linux/cryptodev-linux.git
+[submodule "drivers-extra/nft-fullcone"]
+	path = drivers-extra/nft-fullcone
+	url = https://github.com/fullcone-nat-nftables/nft-fullcone.git
